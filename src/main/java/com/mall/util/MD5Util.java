@@ -53,4 +53,9 @@ public class MD5Util {
     private static final String hexDigits[] = {"0", "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
+    public static void main(String[] args) {
+        String psw="123456";//手工插入数据库user记录的默认密码
+        String encodePsw=MD5Util.MD5EncodeUtf8(psw);
+        System.out.println(encodePsw);
+    }
 }
