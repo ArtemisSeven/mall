@@ -158,6 +158,6 @@ SET FOREIGN_KEY_CHECKS = 1;-- 启用外键约束
 
 delete from `user`;
 insert into `user` (username,password,email,phone,question,answer,role) values
-('admin','0A486FE97F9759927EB149060AB16526','123@qq.com',13800138000,'问题','答案',0),
-('abc','0A486FE97F9759927EB149060AB16526','456@qq.com',18800188000,'问题','答案',1);
+('admin','0A486FE97F9759927EB149060AB16526','123@qq.com',13800138000,'问题','答案',1),
+('abc','0A486FE97F9759927EB149060AB16526','456@qq.com',18800188000,'问题','答案',0);
 select * from `user`;
