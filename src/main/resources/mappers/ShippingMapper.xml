@@ -72,7 +72,7 @@
         receiver_address,
       </if>
       <if test="receiverZip != null" >
-        receiver_zip
+        receiver_zip,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -104,7 +104,7 @@
         #{receiverAddress,jdbcType=VARCHAR},
       </if>
       <if test="receiverZip != null" >
-        #{receiverZip,jdbcType=VARCHAR}
+        #{receiverZip,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -136,7 +136,7 @@
         receiver_address = #{receiverAddress,jdbcType=VARCHAR},
       </if>
       <if test="receiverZip != null" >
-        receiver_zip = #{receiverZip,jdbcType=VARCHAR}
+        receiver_zip = #{receiverZip,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

@@ -80,7 +80,7 @@
         end_time,
       </if>
       <if test="closeTime != null" >
-        close_time
+        close_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -118,7 +118,7 @@
         #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="closeTime != null" >
-        #{closeTime,jdbcType=TIMESTAMP}
+        #{closeTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -156,7 +156,7 @@
         end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="closeTime != null" >
-        close_time = #{closeTime,jdbcType=TIMESTAMP}
+        close_time = #{closeTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

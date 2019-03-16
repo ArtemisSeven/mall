@@ -52,7 +52,7 @@
         platform_number,
       </if>
       <if test="platformStatus != null" >
-        platform_status
+        platform_status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -72,7 +72,7 @@
         #{platformNumber,jdbcType=VARCHAR},
       </if>
       <if test="platformStatus != null" >
-        #{platformStatus,jdbcType=VARCHAR}
+        #{platformStatus,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -92,7 +92,7 @@
         platform_number = #{platformNumber,jdbcType=VARCHAR},
       </if>
       <if test="platformStatus != null" >
-        platform_status = #{platformStatus,jdbcType=VARCHAR}
+        platform_status = #{platformStatus,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

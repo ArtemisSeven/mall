@@ -47,7 +47,7 @@
         quantity,
       </if>
       <if test="checked != null" >
-        checked
+        checked,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -64,7 +64,7 @@
         #{quantity,jdbcType=INTEGER},
       </if>
       <if test="checked != null" >
-        #{checked,jdbcType=INTEGER}
+        #{checked,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -81,7 +81,7 @@
         quantity = #{quantity,jdbcType=INTEGER},
       </if>
       <if test="checked != null" >
-        checked = #{checked,jdbcType=INTEGER}
+        checked = #{checked,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

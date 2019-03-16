@@ -72,7 +72,7 @@
         stock,
       </if>
       <if test="status != null" >
-        status
+        status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -104,7 +104,7 @@
         #{stock,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        #{status,jdbcType=INTEGER}
+        #{status,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -136,7 +136,7 @@
         stock = #{stock,jdbcType=INTEGER},
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=INTEGER}
+        status = #{status,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

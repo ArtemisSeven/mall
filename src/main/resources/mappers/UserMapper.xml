@@ -61,7 +61,7 @@
         answer,
       </if>
       <if test="role != null" >
-        role
+        role,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -87,7 +87,7 @@
         #{answer,jdbcType=VARCHAR},
       </if>
       <if test="role != null" >
-        #{role,jdbcType=INTEGER}
+        #{role,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -113,7 +113,7 @@
         answer = #{answer,jdbcType=VARCHAR},
       </if>
       <if test="role != null" >
-        role = #{role,jdbcType=INTEGER}
+        role = #{role,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
