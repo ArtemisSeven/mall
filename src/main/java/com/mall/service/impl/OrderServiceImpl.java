@@ -98,16 +98,15 @@ public class OrderServiceImpl implements IOrderService {
             return serverResponse;
         }
         List<OrderItem> orderItemList = (List<OrderItem>)serverResponse.getData();
+        if(CollectionUtils.isEmpty(orderItemList)){
+            return ServerResponse.createByErrorMessage("购物车为空");
+        }
         BigDecimal payment = this.getOrderTotalPrice(orderItemList);
-
 
         //生成订单
         Order order = this.assembleOrder(userId,shippingId,payment);
         if(order == null){
             return ServerResponse.createByErrorMessage("生成订单错误");
-        }
-        if(CollectionUtils.isEmpty(orderItemList)){
-            return ServerResponse.createByErrorMessage("购物车为空");
         }
         for(OrderItem orderItem : orderItemList){
             orderItem.setOrderNo(order.getOrderNo());
@@ -231,7 +230,7 @@ public class OrderServiceImpl implements IOrderService {
         return null;
     }
 
-    private long generateOrderNo(){
+    private synchronized long generateOrderNo(){//加上synchronized避免在多线程环境下key值一样
         long currentTime =System.currentTimeMillis();
         return currentTime+new Random().nextInt(100);
     }
@@ -512,10 +511,6 @@ public class OrderServiceImpl implements IOrderService {
 
         return ServerResponse.createBySuccess();
     }
-
-
-
-
 
     public ServerResponse queryOrderPayStatus(Integer userId,Long orderNo){
         Order order = orderMapper.selectByUserIdAndOrderNo(userId,orderNo);

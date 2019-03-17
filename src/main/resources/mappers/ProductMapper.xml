@@ -155,6 +155,13 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
+  <select id="selectList" resultMap="BaseResultMap" >
+    SELECT
+    <include refid="Base_Column_List"/>
+    from product
+    ORDER BY id asc
+  </select>
+
   <select id="selectByNameAndProductId" resultMap="BaseResultMap" parameterType="map">
     SELECT
     <include refid="Base_Column_List"/>

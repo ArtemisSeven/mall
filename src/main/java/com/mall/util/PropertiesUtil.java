@@ -25,22 +25,11 @@ public class PropertiesUtil {
     }
 
     public static String getProperty(String key){
-        String value = props.getProperty(key.trim());
-        if(StringUtils.isBlank(value)){
-            return null;
-        }
-        return value.trim();
-    }
-
-    public static String getProperty(String key,String defaultValue){
 
         String value = props.getProperty(key.trim());
         if(StringUtils.isBlank(value)){
-            value = defaultValue;
+            logger.error("请配置"+key+"的值");
         }
         return value.trim();
     }
-
-
-
 }
